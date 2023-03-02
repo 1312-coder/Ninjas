@@ -1,0 +1,25 @@
+[2023-03-01T17:22:53.958+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: update-filter.gcs_sensor scheduled__2023-03-01T01:14:00+00:00 [queued]>
+[2023-03-01T17:22:53.988+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: update-filter.gcs_sensor scheduled__2023-03-01T01:14:00+00:00 [queued]>
+[2023-03-01T17:22:53.988+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-01T17:22:53.991+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 1
+[2023-03-01T17:22:53.993+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-01T17:22:54.031+0000] {taskinstance.py:1300} INFO - Executing <Task(GCSObjectExistenceSensor): gcs_sensor> on 2023-03-01 01:14:00+00:00
+[2023-03-01T17:22:54.039+0000] {standard_task_runner.py:55} INFO - Started process 435 to run task
+[2023-03-01T17:22:54.055+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'update-filter', 'gcs_sensor', 'scheduled__2023-03-01T01:14:00+00:00', '--job-id', '270', '--raw', '--subdir', 'DAGS_FOLDER/update-filter.py', '--cfg-path', '/tmp/tmphsm99z88']
+[2023-03-01T17:22:54.056+0000] {standard_task_runner.py:83} INFO - Job 270: Subtask gcs_sensor
+[2023-03-01T17:22:54.197+0000] {task_command.py:388} INFO - Running <TaskInstance: update-filter.gcs_sensor scheduled__2023-03-01T01:14:00+00:00 [running]> on host 65ef354bad49
+[2023-03-01T17:22:54.319+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=update-filter
+AIRFLOW_CTX_TASK_ID=gcs_sensor
+AIRFLOW_CTX_EXECUTION_DATE=2023-03-01T01:14:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-03-01T01:14:00+00:00
+[2023-03-01T17:22:54.321+0000] {gcs.py:89} INFO - Sensor checks existence of : ***-gcs-bq, update.csv
+[2023-03-01T17:22:54.348+0000] {base.py:73} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-03-01T17:22:54.942+0000] {base.py:228} INFO - Success criteria met. Exiting.
+[2023-03-01T17:22:54.956+0000] {taskinstance.py:1323} INFO - Marking task as SUCCESS. dag_id=update-filter, task_id=gcs_sensor, execution_date=20230301T011400, start_date=20230301T172253, end_date=20230301T172254
+[2023-03-01T17:22:55.069+0000] {local_task_job.py:208} INFO - Task exited with return code 0
+[2023-03-01T17:22:55.179+0000] {taskinstance.py:2578} INFO - 1 downstream tasks scheduled from follow-on schedule check

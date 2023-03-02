@@ -1,0 +1,36 @@
+[2023-03-01T17:22:15.868+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: update-filter.load_to_bq scheduled__2023-03-01T00:32:00+00:00 [queued]>
+[2023-03-01T17:22:15.881+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: update-filter.load_to_bq scheduled__2023-03-01T00:32:00+00:00 [queued]>
+[2023-03-01T17:22:15.883+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-01T17:22:15.884+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 1
+[2023-03-01T17:22:15.884+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-01T17:22:15.906+0000] {taskinstance.py:1300} INFO - Executing <Task(GCSToBigQueryOperator): load_to_bq> on 2023-03-01 00:32:00+00:00
+[2023-03-01T17:22:15.918+0000] {standard_task_runner.py:55} INFO - Started process 269 to run task
+[2023-03-01T17:22:15.952+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'update-filter', 'load_to_bq', 'scheduled__2023-03-01T00:32:00+00:00', '--job-id', '233', '--raw', '--subdir', 'DAGS_FOLDER/update-filter.py', '--cfg-path', '/tmp/tmp_fjyr6df']
+[2023-03-01T17:22:15.960+0000] {standard_task_runner.py:83} INFO - Job 233: Subtask load_to_bq
+[2023-03-01T17:22:16.090+0000] {task_command.py:388} INFO - Running <TaskInstance: update-filter.load_to_bq scheduled__2023-03-01T00:32:00+00:00 [running]> on host 65ef354bad49
+[2023-03-01T17:22:16.274+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=update-filter
+AIRFLOW_CTX_TASK_ID=load_to_bq
+AIRFLOW_CTX_EXECUTION_DATE=2023-03-01T00:32:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-03-01T00:32:00+00:00
+[2023-03-01T17:22:16.297+0000] {base.py:73} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-03-01T17:22:16.301+0000] {gcs_to_bigquery.py:377} INFO - Using existing BigQuery table for storing data...
+[2023-03-01T17:22:16.362+0000] {gcs_to_bigquery.py:381} INFO - Executing: {'load': {'autodetect': True, 'createDisposition': 'CREATE_IF_NEEDED', 'destinationTable': {'projectId': '***-gcs-bq', 'datasetId': '***_dataset', 'tableId': 'upload'}, 'sourceFormat': 'CSV', 'sourceUris': ['gs://***-gcs-bq/update.csv'], 'writeDisposition': 'WRITE_TRUNCATE', 'ignoreUnknownValues': False, 'schema': {'fields': [{'name': 'id', 'type': 'INTEGER', 'mode': 'REQUIRED'}, {'name': 'name', 'type': 'STRING', 'mode': 'REQUIRED'}, {'name': 'age', 'type': 'INTEGER', 'mode': 'REQUIRED'}]}, 'skipLeadingRows': None, 'fieldDelimiter': ',', 'quote': None, 'allowQuotedNewlines': False, 'encoding': 'UTF-8'}}
+[2023-03-01T17:22:16.370+0000] {bigquery.py:1542} INFO - Inserting job ***_update_filter_load_to_bq_2023_03_01T00_32_00_00_00_8dc8958a6452e76fb70e23a64d1c48b0
+[2023-03-01T17:22:17.600+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/transfers/gcs_to_bigquery.py", line 440, in execute
+    job.result(timeout=self.result_timeout, retry=self.result_retry)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/bigquery/job/base.py", line 728, in result
+    return super(_AsyncJob, self).result(timeout=timeout, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/api_core/future/polling.py", line 137, in result
+    raise self._exception
+google.api_core.exceptions.Forbidden: 403 Exceeded rate limits: too many table update operations for this table. For more information, see https://cloud.google.com/bigquery/docs/troubleshoot-quotas
+[2023-03-01T17:22:17.613+0000] {taskinstance.py:1323} INFO - Marking task as FAILED. dag_id=update-filter, task_id=load_to_bq, execution_date=20230301T003200, start_date=20230301T172215, end_date=20230301T172217
+[2023-03-01T17:22:17.623+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 233 for task load_to_bq (403 Exceeded rate limits: too many table update operations for this table. For more information, see https://cloud.google.com/bigquery/docs/troubleshoot-quotas; 269)
+[2023-03-01T17:22:17.648+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2023-03-01T17:22:17.703+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,144 @@
+[2023-03-01T23:16:28.671+0000] {processor.py:153} INFO - Started process (PID=34) to work on /opt/airflow/dags/update-filter_local.py
+[2023-03-01T23:16:28.672+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/update-filter_local.py for tasks to queue
+[2023-03-01T23:16:28.673+0000] {logging_mixin.py:137} INFO - [2023-03-01T23:16:28.673+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/update-filter_local.py
+[2023-03-01T23:16:29.914+0000] {logging_mixin.py:137} INFO - [2023-03-01T23:16:29.912+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/update-filter_local.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/update-filter_local.py", line 28, in <module>
+    gcs_hook = GCSHook(gcp_conn_id=connection_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 150, in __init__
+    impersonation_chain=impersonation_chain,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/common/hooks/base_google.py", line 231, in __init__
+    self.extras: dict = self.get_connection(self.gcp_conn_id).extra_dejson
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/hooks/base.py", line 72, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 435, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `google_cloud_default` isn't defined
+[2023-03-01T23:16:29.914+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/update-filter_local.py
+[2023-03-01T23:16:29.920+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/update-filter_local.py took 1.253 seconds
+[2023-03-01T23:17:00.215+0000] {processor.py:153} INFO - Started process (PID=120) to work on /opt/airflow/dags/update-filter_local.py
+[2023-03-01T23:17:00.216+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/update-filter_local.py for tasks to queue
+[2023-03-01T23:17:00.217+0000] {logging_mixin.py:137} INFO - [2023-03-01T23:17:00.216+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/update-filter_local.py
+[2023-03-01T23:17:00.673+0000] {logging_mixin.py:137} INFO - [2023-03-01T23:17:00.671+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/update-filter_local.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/update-filter_local.py", line 28, in <module>
+    gcs_hook = GCSHook(gcp_conn_id=connection_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 150, in __init__
+    impersonation_chain=impersonation_chain,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/common/hooks/base_google.py", line 231, in __init__
+    self.extras: dict = self.get_connection(self.gcp_conn_id).extra_dejson
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/hooks/base.py", line 72, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 435, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `google_cloud_default` isn't defined
+[2023-03-01T23:17:00.674+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/update-filter_local.py
+[2023-03-01T23:17:00.679+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/update-filter_local.py took 0.466 seconds
+[2023-03-01T23:21:29.826+0000] {processor.py:153} INFO - Started process (PID=34) to work on /opt/airflow/dags/update-filter_local.py
+[2023-03-01T23:21:29.828+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/update-filter_local.py for tasks to queue
+[2023-03-01T23:21:29.829+0000] {logging_mixin.py:137} INFO - [2023-03-01T23:21:29.829+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/update-filter_local.py
+[2023-03-01T23:21:30.365+0000] {logging_mixin.py:137} INFO - [2023-03-01T23:21:30.362+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/update-filter_local.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/update-filter_local.py", line 28, in <module>
+    gcs_hook = GCSHook(gcp_conn_id=connection_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 150, in __init__
+    impersonation_chain=impersonation_chain,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/common/hooks/base_google.py", line 231, in __init__
+    self.extras: dict = self.get_connection(self.gcp_conn_id).extra_dejson
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/hooks/base.py", line 72, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 435, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `google_cloud_default` isn't defined
+[2023-03-01T23:21:30.366+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/update-filter_local.py
+[2023-03-01T23:21:30.374+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/update-filter_local.py took 0.552 seconds
+[2023-03-01T23:22:00.437+0000] {processor.py:153} INFO - Started process (PID=115) to work on /opt/airflow/dags/update-filter_local.py
+[2023-03-01T23:22:00.440+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/update-filter_local.py for tasks to queue
+[2023-03-01T23:22:00.440+0000] {logging_mixin.py:137} INFO - [2023-03-01T23:22:00.440+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/update-filter_local.py
+[2023-03-01T23:22:00.823+0000] {logging_mixin.py:137} INFO - [2023-03-01T23:22:00.821+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/update-filter_local.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/update-filter_local.py", line 28, in <module>
+    gcs_hook = GCSHook(gcp_conn_id=connection_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 150, in __init__
+    impersonation_chain=impersonation_chain,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/common/hooks/base_google.py", line 231, in __init__
+    self.extras: dict = self.get_connection(self.gcp_conn_id).extra_dejson
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/hooks/base.py", line 72, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 435, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `google_cloud_default` isn't defined
+[2023-03-01T23:22:00.824+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/update-filter_local.py
+[2023-03-01T23:22:00.829+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/update-filter_local.py took 0.396 seconds
+[2023-03-01T23:22:31.674+0000] {processor.py:153} INFO - Started process (PID=185) to work on /opt/airflow/dags/update-filter_local.py
+[2023-03-01T23:22:31.677+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/update-filter_local.py for tasks to queue
+[2023-03-01T23:22:31.679+0000] {logging_mixin.py:137} INFO - [2023-03-01T23:22:31.679+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/update-filter_local.py
+[2023-03-01T23:22:32.090+0000] {logging_mixin.py:137} INFO - [2023-03-01T23:22:32.088+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/update-filter_local.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/update-filter_local.py", line 28, in <module>
+    gcs_hook = GCSHook(gcp_conn_id=connection_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 150, in __init__
+    impersonation_chain=impersonation_chain,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/common/hooks/base_google.py", line 231, in __init__
+    self.extras: dict = self.get_connection(self.gcp_conn_id).extra_dejson
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/hooks/base.py", line 72, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 435, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `google_cloud_default` isn't defined
+[2023-03-01T23:22:32.090+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/update-filter_local.py
+[2023-03-01T23:22:32.095+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/update-filter_local.py took 0.428 seconds
+[2023-03-01T23:23:02.134+0000] {processor.py:153} INFO - Started process (PID=269) to work on /opt/airflow/dags/update-filter_local.py
+[2023-03-01T23:23:02.135+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/update-filter_local.py for tasks to queue
+[2023-03-01T23:23:02.135+0000] {logging_mixin.py:137} INFO - [2023-03-01T23:23:02.135+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/update-filter_local.py
+[2023-03-01T23:23:02.495+0000] {logging_mixin.py:137} INFO - [2023-03-01T23:23:02.493+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/update-filter_local.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/update-filter_local.py", line 28, in <module>
+    gcs_hook = GCSHook(gcp_conn_id=connection_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 150, in __init__
+    impersonation_chain=impersonation_chain,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/common/hooks/base_google.py", line 231, in __init__
+    self.extras: dict = self.get_connection(self.gcp_conn_id).extra_dejson
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/hooks/base.py", line 72, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 435, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `google_cloud_default` isn't defined
+[2023-03-01T23:23:02.496+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/update-filter_local.py
+[2023-03-01T23:23:02.501+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/update-filter_local.py took 0.369 seconds
+[2023-03-01T23:23:33.079+0000] {processor.py:153} INFO - Started process (PID=346) to work on /opt/airflow/dags/update-filter_local.py
+[2023-03-01T23:23:33.081+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/update-filter_local.py for tasks to queue
+[2023-03-01T23:23:33.082+0000] {logging_mixin.py:137} INFO - [2023-03-01T23:23:33.082+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/update-filter_local.py
+[2023-03-01T23:23:33.440+0000] {logging_mixin.py:137} INFO - [2023-03-01T23:23:33.440+0000] {base.py:73} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-03-01T23:23:33.445+0000] {processor.py:753} INFO - DAG(s) dict_keys(['update-filter_local']) retrieved from /opt/airflow/dags/update-filter_local.py
+[2023-03-01T23:23:33.493+0000] {logging_mixin.py:137} INFO - [2023-03-01T23:23:33.493+0000] {manager.py:504} INFO - Created Permission View: can edit on DAG:update-filter_local
+[2023-03-01T23:23:33.497+0000] {logging_mixin.py:137} INFO - [2023-03-01T23:23:33.497+0000] {manager.py:504} INFO - Created Permission View: can delete on DAG:update-filter_local
+[2023-03-01T23:23:33.500+0000] {logging_mixin.py:137} INFO - [2023-03-01T23:23:33.500+0000] {manager.py:504} INFO - Created Permission View: can read on DAG:update-filter_local
+[2023-03-01T23:23:33.501+0000] {logging_mixin.py:137} INFO - [2023-03-01T23:23:33.500+0000] {dag.py:2690} INFO - Sync 1 DAGs
+[2023-03-01T23:23:33.507+0000] {logging_mixin.py:137} INFO - [2023-03-01T23:23:33.507+0000] {dag.py:2711} INFO - Creating ORM DAG for update-filter_local
+[2023-03-01T23:23:33.512+0000] {logging_mixin.py:137} INFO - [2023-03-01T23:23:33.512+0000] {dag.py:3441} INFO - Setting next_dagrun for update-filter_local to None, run_after=None
+[2023-03-01T23:23:33.520+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/update-filter_local.py took 0.445 seconds

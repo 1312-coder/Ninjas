@@ -1,0 +1,34 @@
+[2023-02-27T16:33:41.785+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: update-filter.load_to_bq manual__2023-02-27T16:33:39.292741+00:00 [queued]>
+[2023-02-27T16:33:41.790+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: update-filter.load_to_bq manual__2023-02-27T16:33:39.292741+00:00 [queued]>
+[2023-02-27T16:33:41.791+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-02-27T16:33:41.791+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 1
+[2023-02-27T16:33:41.791+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-02-27T16:33:41.798+0000] {taskinstance.py:1300} INFO - Executing <Task(GCSToBigQueryOperator): load_to_bq> on 2023-02-27 16:33:39.292741+00:00
+[2023-02-27T16:33:41.802+0000] {standard_task_runner.py:55} INFO - Started process 2319 to run task
+[2023-02-27T16:33:41.805+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'update-filter', 'load_to_bq', 'manual__2023-02-27T16:33:39.292741+00:00', '--job-id', '41', '--raw', '--subdir', 'DAGS_FOLDER/update-filter.py', '--cfg-path', '/tmp/tmpo6rtxqao']
+[2023-02-27T16:33:41.806+0000] {standard_task_runner.py:83} INFO - Job 41: Subtask load_to_bq
+[2023-02-27T16:33:41.847+0000] {task_command.py:388} INFO - Running <TaskInstance: update-filter.load_to_bq manual__2023-02-27T16:33:39.292741+00:00 [running]> on host d766c014b21e
+[2023-02-27T16:33:41.896+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=update-filter
+AIRFLOW_CTX_TASK_ID=load_to_bq
+AIRFLOW_CTX_EXECUTION_DATE=2023-02-27T16:33:39.292741+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-02-27T16:33:39.292741+00:00
+[2023-02-27T16:33:41.904+0000] {base.py:73} INFO - Using connection ID '***-gcs-bq' for task execution.
+[2023-02-27T16:33:41.905+0000] {gcs_to_bigquery.py:377} INFO - Using existing BigQuery table for storing data...
+[2023-02-27T16:33:41.942+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/transfers/gcs_to_bigquery.py", line 378, in execute
+    self.configuration = self._use_existing_table()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/transfers/gcs_to_bigquery.py", line 580, in _use_existing_table
+    var_name="destination_project_dataset_table",
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 2250, in split_tablename
+    f"{var_print(var_name)} Expect format of (<project.|<project:)<dataset>.<table>, "
+Exception: Format exception for destination_project_dataset_table:  Expect format of (<project.|<project:)<dataset>.<table>, got ***-gcs-bq.***-gcs-bq.***_dataset.upload
+[2023-02-27T16:33:41.949+0000] {taskinstance.py:1323} INFO - Marking task as FAILED. dag_id=update-filter, task_id=load_to_bq, execution_date=20230227T163339, start_date=20230227T163341, end_date=20230227T163341
+[2023-02-27T16:33:41.956+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 41 for task load_to_bq (Format exception for destination_project_dataset_table:  Expect format of (<project.|<project:)<dataset>.<table>, got ***-gcs-bq.***-gcs-bq.***_dataset.upload; 2319)
+[2023-02-27T16:33:41.977+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2023-02-27T16:33:41.993+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,50 @@
+[2023-02-24T22:52:39.436+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: update-filter.gcs_sensor manual__2023-02-24T22:52:37.936238+00:00 [queued]>
+[2023-02-24T22:52:39.442+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: update-filter.gcs_sensor manual__2023-02-24T22:52:37.936238+00:00 [queued]>
+[2023-02-24T22:52:39.443+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-02-24T22:52:39.443+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 1
+[2023-02-24T22:52:39.444+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-02-24T22:52:39.452+0000] {taskinstance.py:1300} INFO - Executing <Task(GCSObjectExistenceSensor): gcs_sensor> on 2023-02-24 22:52:37.936238+00:00
+[2023-02-24T22:52:39.456+0000] {standard_task_runner.py:55} INFO - Started process 783 to run task
+[2023-02-24T22:52:39.458+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'update-filter', 'gcs_sensor', 'manual__2023-02-24T22:52:37.936238+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/update-filter.py', '--cfg-path', '/tmp/tmpx_g87umn']
+[2023-02-24T22:52:39.459+0000] {standard_task_runner.py:83} INFO - Job 9: Subtask gcs_sensor
+[2023-02-24T22:52:39.512+0000] {task_command.py:388} INFO - Running <TaskInstance: update-filter.gcs_sensor manual__2023-02-24T22:52:37.936238+00:00 [running]> on host d766c014b21e
+[2023-02-24T22:52:39.558+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=update-filter
+AIRFLOW_CTX_TASK_ID=gcs_sensor
+AIRFLOW_CTX_EXECUTION_DATE=2023-02-24T22:52:37.936238+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-02-24T22:52:37.936238+00:00
+[2023-02-24T22:52:39.560+0000] {gcs.py:89} INFO - Sensor checks existence of : ***-gcs-bq, ***-gcs-bq/update.csv
+[2023-02-24T22:52:39.568+0000] {base.py:73} INFO - Using connection ID '***-gcs-bq' for task execution.
+[2023-02-24T22:52:39.570+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/sensors/base.py", line 199, in execute
+    poke_return = self.poke(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/sensors/gcs.py", line 95, in poke
+    return hook.exists(self.bucket, self.object, self.retry)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 550, in exists
+    client = self.get_conn()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 157, in get_conn
+    credentials=self.get_credentials(), client_info=CLIENT_INFO, project=self.project_id
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/common/hooks/base_google.py", line 275, in get_credentials
+    credentials, _ = self.get_credentials_and_project_id()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/common/hooks/base_google.py", line 261, in get_credentials_and_project_id
+    delegates=delegates,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/utils/credentials_provider.py", line 332, in get_credentials_and_project_id
+    return _CredentialProvider(*args, **kwargs).get_credentials_and_project()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/utils/credentials_provider.py", line 231, in get_credentials_and_project
+    credentials, project_id = self._get_credentials_using_key_path()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/utils/credentials_provider.py", line 281, in _get_credentials_using_key_path
+    self.key_path, scopes=self.scopes
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/oauth2/service_account.py", line 242, in from_service_account_file
+    filename, require=["client_email", "token_uri"]
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/auth/_service_account_info.py", line 80, in from_filename
+    with io.open(filename, "r", encoding="utf-8") as json_file:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/pranshudixit/coding_data/Test-web-code/airflow-codes/update-filter-dag/dags/airflow-gcs-bq-7e9e7c702f8f.json'
+[2023-02-24T22:52:39.580+0000] {taskinstance.py:1323} INFO - Marking task as FAILED. dag_id=update-filter, task_id=gcs_sensor, execution_date=20230224T225237, start_date=20230224T225239, end_date=20230224T225239
+[2023-02-24T22:52:39.587+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 9 for task gcs_sensor ([Errno 2] No such file or directory: '/Users/pranshudixit/coding_data/Test-web-code/airflow-codes/update-filter-dag/dags/airflow-gcs-bq-7e9e7c702f8f.json'; 783)
+[2023-02-24T22:52:39.631+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2023-02-24T22:52:39.658+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

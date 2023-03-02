@@ -1,0 +1,30 @@
+[2023-03-01T17:19:53.772+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: update-filter.filter_insert scheduled__2023-02-19T18:22:00+00:00 [queued]>
+[2023-03-01T17:19:53.779+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: update-filter.filter_insert scheduled__2023-02-19T18:22:00+00:00 [queued]>
+[2023-03-01T17:19:53.780+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-01T17:19:53.780+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 1
+[2023-03-01T17:19:53.787+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-01T17:19:53.811+0000] {taskinstance.py:1300} INFO - Executing <Task(BigQueryExecuteQueryOperator): filter_insert> on 2023-02-19 18:22:00+00:00
+[2023-03-01T17:19:53.821+0000] {standard_task_runner.py:55} INFO - Started process 997 to run task
+[2023-03-01T17:19:53.826+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'update-filter', 'filter_insert', 'scheduled__2023-02-19T18:22:00+00:00', '--job-id', '122', '--raw', '--subdir', 'DAGS_FOLDER/update-filter.py', '--cfg-path', '/tmp/tmpebbu6g0c']
+[2023-03-01T17:19:53.829+0000] {standard_task_runner.py:83} INFO - Job 122: Subtask filter_insert
+[2023-03-01T17:19:53.911+0000] {task_command.py:388} INFO - Running <TaskInstance: update-filter.filter_insert scheduled__2023-02-19T18:22:00+00:00 [running]> on host 65ef354bad49
+[2023-03-01T17:19:53.981+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=update-filter
+AIRFLOW_CTX_TASK_ID=filter_insert
+AIRFLOW_CTX_EXECUTION_DATE=2023-02-19T18:22:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-02-19T18:22:00+00:00
+[2023-03-01T17:19:53.984+0000] {bigquery.py:1077} INFO - Executing: 
+        INSERT INTO `***-gcs-bq.***_dataset.filter` (id, name)
+        SELECT id, name FROM `***-gcs-bq.***_dataset.upload` 
+[2023-03-01T17:19:53.999+0000] {base.py:73} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-03-01T17:19:54.001+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/providers/google/cloud/hooks/bigquery.py:2051: DeprecationWarning: This method is deprecated. Please use `BigQueryHook.insert_job` method.
+  "This method is deprecated. Please use `BigQueryHook.insert_job` method.", DeprecationWarning
+
+[2023-03-01T17:19:54.051+0000] {bigquery.py:1542} INFO - Inserting job ***_1677691194050566_1381213f04f0d181d3dd074bd757c1d1
+[2023-03-01T17:19:57.718+0000] {taskinstance.py:1323} INFO - Marking task as SUCCESS. dag_id=update-filter, task_id=filter_insert, execution_date=20230219T182200, start_date=20230301T171953, end_date=20230301T171957
+[2023-03-01T17:19:57.764+0000] {local_task_job.py:208} INFO - Task exited with return code 0
+[2023-03-01T17:19:57.790+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check
