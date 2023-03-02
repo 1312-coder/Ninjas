@@ -1,13 +1,13 @@
-from googleapiclient import discovery
-from oauth2client.client import GoogleCredentials
-import requests
+from google.cloud import storage
 
-credentials = GoogleCredentials.get_application_default()
-service = discovery.build('storage', 'v1', credentials=credentials)
+# Create a client object
+client = storage.Client()
 
-filename = 'D:\Git_training\Practice\api2.csv'   # local file location
-bucket = 'asia-northeast2-gcp-mn1-f7977b01-bucket' # GCP bucket name 
+# Get a reference to the destination bucket and blob
+bucket = client.get_bucket('asia-south1-gcp-mn1-5ed87924-bucket')
+blob = bucket.blob('api/api.csv')
 
-body = {'api2.csv': 'api2.csv'}
-req = service.objects().insert(bucket=bucket, body=body, media_body=filename)
-resp = req.execute() 
+# Upload the file to Google Cloud Storage
+blob.upload_from_filename('D:/Git_training/Practice/api.csv')
+
+print(blob)
