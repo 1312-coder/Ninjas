@@ -20,7 +20,6 @@ What would you like to do?
 def Load_task():
     try:
         with open('TASK_FILE', 'r') as f:
-            print("\n")
             todo_list = json.load(f)
     except FileNotFoundError:
         todo_list = []
@@ -28,8 +27,7 @@ def Load_task():
 
 def save_task(todo_list):
     with open("TASK_FILE", "w") as f: 
-        json.dump(todo_list, f) 
-        f.write('\n')  
+            json.dump(todo_list, f)   
     print("Task saved successfully!")
              
 def add_task(todo_list):
