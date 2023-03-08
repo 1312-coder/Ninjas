@@ -3,7 +3,7 @@ from datetime import datetime
 from airflow.providers.google.cloud.transfers.gcs_to_bigquery import GCSToBigQueryOperator
 from airflow.providers.google.cloud.operators.gcs import GCSListObjectsOperator
 from airflow.operators.dummy import DummyOperator
-from airflow.providers.google.cloud.operators.bigquery import BigQueryOperator
+from airflow.contrib.operators.bigquery_operator import BigQueryOperator
 
 default_args = {
     'owner': 'airflow',
@@ -15,7 +15,7 @@ default_args = {
 with DAG(
     'file_gcs',
     default_args=default_args,
-    schedule='@daily',
+    schedule_interval='@daily',
     catchup=False
     ) as dag:
 
@@ -24,10 +24,11 @@ with DAG(
     )  
 
     gcs_check_task = GCSListObjectsOperator(
-        task_id='gcs_check_task',
-        bucket_name ='us-central1-practiceset-d10a9e0b-bucket',
-        prefix='path/to/your/file.csv'
-    )
+    task_id='gcs_check_task',
+    bucket ='us-central1-practiceset-d10a9e0b-bucket',
+    prefix='path/to/your/file.csv',
+    gcp_conn_id='google_cloud_default'
+)
 
     gcs_to_bq_task = GCSToBigQueryOperator(
 
@@ -47,11 +48,11 @@ with DAG(
 
     insert_rows = BigQueryOperator(
     task_id='insert_rows',
-    sql='C:\Users\samra\OneDrive\Desktop\IT007\Airflow\dags\raw.sql',
+    sql='C:/Users/samra/OneDrive/Desktop/IT007/Airflow/dags/raw.sql',
     destination_dataset_table='your-project.your-dataset.your-table',
     write_disposition='WRITE_APPEND',
     use_legacy_sql=False,
-    dag=dag,
+    dag=dag
 )
 
     end_dag = DummyOperator(
