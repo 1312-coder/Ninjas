@@ -1,28 +1,36 @@
-import time
+#refarance by https://www.makeuseof.com/python-alarm-clock-simple-create/
+import datetime
+import time 
 import random
 import webbrowser
-import requests
 
-def read_file():
-    response = requests.get("https://www.youtube.com/watch?v=vnMLCe54C8Q&list=RDvnMLCe54C8Q&start_radio=1")
-    urls = response.content.decode().split("\n")
-    return urls
+with open('C:\\Users\\samra\\OneDrive\\Desktop\\IT007\\prctice\\youtube.txt', 'r') as file:
+    youtube_urls = file.readlines()
 
-def set_clock(clock):
-    while True:
-        current_time = time.strftime("%H:%M")
-        if current_time == clock:
-            break
-        time.sleep(1)
+invalid = True
+while(invalid):
+    # Get a valid user input for the clock 
+    print("set clock(HH:MM)")
+    userinput = input(">> ")
 
-def set_url(urls):
-    webbrowser.open(random.choice(urls))
+    alarmTime = [int(n) 
+                # convert 6:30 to an array of [6, 30].
+                for n in userinput.split(":")]
+    #enter valid time 
+    if alarmTime[0] >= 24 or alarmTime[0] < 0:
+        invalid=True
+    elif alarmTime[1] >= 60 or alarmTime[1] < 0:
+        invalid=True
+    else:
+        invalid= False
 
-def main():
-    urls = read_file
-    clock = input ("24 hors format (HH:MM)")
-    set_clock(clock)
-    set_url(urls)
-    
+now = datetime.datetime.now()
+# Create datetime object with today's date 
+alarmDateTime = datetime.datetime(now.year, now.month, now.day, alarmTime[0], alarmTime[1])
 
-main()
+# Waiting for alarm time 
+while datetime.datetime.now() < alarmDateTime:
+    time.sleep(1)
+
+# open random YouTube URL
+webbrowser.open(random.choice(youtube_urls))
